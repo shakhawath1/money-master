@@ -33,9 +33,10 @@
                         <h4 class="text-center my-3">Income</h4>
                         <div>
                             <p class="text-end">Income: <input id="income" type="number" class="ms-2"></p>
-                            <p id="income-negative" class="text-end danger error-message">Please enter positive number.
+                            <p id="income-negative" class="text-end text-danger error-message">Please enter positive
+                                number.
                             </p>
-                            <p id="income-empty" class="text-end danger error-message">This fild is required.</p>
+                            <p id="income-empty" class="text-end text-danger error-message">This fild is required.</p>
                         </div>
                     </div>
                     <!-- expences part -->
@@ -43,17 +44,19 @@
                         <h4 class="text-center my-3">Expences</h4>
                         <div>
                             <p class="text-end">Food: <input id="food-exp" type="number" class="ms-2 mb-0"></p>
-                            <p id="food-negative" class="text-end danger error-message">Please enter positive number.
+                            <p id="food-negative" class="text-end text-danger error-message">Please enter positive
+                                number.
                             </p>
-                            <p id="food-empty" class="text-end danger error-message">This fild is required.</p>
+                            <p id="food-empty" class="text-end text-danger error-message">This fild is required.</p>
                             <p class="text-end">Rent: <input id="rent-exp" type="number" class="ms-2"></p>
                             <p id="rent-negative" class="text-end danger error-message">Please enter positive number.
                             </p>
-                            <p id="rent-empty" class="text-end danger error-message">This fild is required.</p>
+                            <p id="rent-empty" class="text-end text-danger error-message">This fild is required.</p>
                             <p class="text-end">Lifestyle: <input id="lifestyle-exp" type="number" class="ms-2"></p>
-                            <p id="lifestyle-negative" class="text-end danger error-message">Please enter positive
+                            <p id="lifestyle-negative" class="text-end text-danger error-message">Please enter positive
                                 number.</p>
-                            <p id="lifestyle-empty" class="text-end danger error-message">This fild is required.</p>
+                            <p id="lifestyle-empty" class="text-end text-danger error-message">This fild is required.
+                            </p>
                         </div>
                     </div>
                     <!-- calculate part -->
@@ -67,10 +70,16 @@
                     </div>
                     <!-- saving part -->
                     <div>
-                        <p class="text-center">Save: <input type="number" class="ms-2 py-1"> %
-                            <button class="btn btn-info px-3 fw-bold" type="button">Save</button>
+                        <p class="text-center">Save: <input id="percent-fild" type="number" class="ms-2 py-1"> %
+                            <button id="save-btn" class="btn btn-info px-3 fw-bold" type="button">Save</button>
                         </p>
-                        <p class="text-center fs-5 fw-bolder">Saving Amount: <span></span></p>
+                        <p id="percent-negative" class="text-center text-danger me-5 pe-5 error-message">Please enter
+                            positive
+                            number.</p>
+                        <p id="percent-empty" class="text-center text-danger me-5 pe-5 error-message">This fild
+                            is required.
+                        </p>
+                        <p class="text-center fs-5 fw-bolder">Saving Amount: <span id="saving-amount"></span></p>
                         <p class="text-center fs-5 fw-bolder">Remaining Balance: <span></span></p>
                     </div>
                     <div class="d-grid col-6 mx-auto my-4">
