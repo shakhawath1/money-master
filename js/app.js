@@ -3,8 +3,8 @@ function getincomeAmount() {
     const incomeFild = document.getElementById('income');
     const incomeText = incomeFild.value;
     const incomeAmount = parseFloat(incomeText);
-    const negativeFild = document.getElementById('income-negative')
-    const emptyFild = document.getElementById('income-empty')
+    const negativeFild = document.getElementById('income-negative');
+    const emptyFild = document.getElementById('income-empty');
     if (incomeText < 0) {
         negativeFild.style.display = 'block';
         emptyFild.style.display = 'none';
@@ -17,8 +17,8 @@ function getincomeAmount() {
         negativeFild.style.display = 'none';
         emptyFild.style.display = 'none';
         return incomeAmount;
-    }
-}
+    };
+};
 // get total expences 
 function getTotalExp() {
     const foodExp = getCalculateItem('food');
@@ -40,7 +40,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
         const balance = incomeAmount - totalExp;
         balanceFild.innerText = balance;
         expencesFild.innerText = totalExp;
-    }
+    };
 });
 // get calculate item
 function getCalculateItem(itemId) {
@@ -60,15 +60,15 @@ function getCalculateItem(itemId) {
         negativeFild.style.display = 'none';
         emptyFild.style.display = 'none';
         return parseFloat(expFild.value);
-    }
-}
+    };
+};
 //  get saving percent
 function getSavingPercent() {
     const percentFild = document.getElementById('percent-fild');
     const percentText = percentFild.value;
     const percent = parseFloat(percentText);
-    const negativeFild = document.getElementById('percent-negative')
-    const emptyFild = document.getElementById('percent-empty')
+    const negativeFild = document.getElementById('percent-negative');
+    const emptyFild = document.getElementById('percent-empty');
     if (percentFild.value < 0) {
         negativeFild.style.display = 'block';
         emptyFild.style.display = 'none';
@@ -81,8 +81,8 @@ function getSavingPercent() {
         negativeFild.style.display = 'none';
         emptyFild.style.display = 'none';
         return percent;
-    }
-}
+    };
+};
 // savings calculate
 document.getElementById('save-btn').addEventListener('click', function () {
     const incomeAmount = getincomeAmount();
@@ -90,6 +90,18 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const savingAmount = incomeAmount * (savingPercent / 100);
     const savingFild = document.getElementById('saving-amount');
     savingFild.innerText = savingAmount;
-    console.log(savingAmount)
+    // remaining balance
+    const remainingFild = document.getElementById('remaining-balance');
+    const balanceFild = document.getElementById('balance');
+    const balance = parseFloat(balanceFild.innerText);
+    if (savingAmount > balance) {
+        remainingFild.innerText = balance;
+        savingFild.innerText = 'You have no enough money for savings.'
+    }
+    else {
+        const remainingAmount = balance - savingAmount;
+        remainingFild.innerText = remainingAmount;
+    }
 
-})
+});
+
