@@ -98,7 +98,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
         remainingFild.innerText = balance;
         savingFild.innerText = 'You have no enough money for savings.'
     }
-    else {
+    else if (savingAmount <= balance) {
         const remainingAmount = balance - savingAmount;
         remainingFild.innerText = remainingAmount;
     }

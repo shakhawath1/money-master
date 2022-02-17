@@ -16,3 +16,8 @@ body{
 .error-message{
     display: none;
 }
+
+/* footer */
+footer{
+    height: 50px;
+}
