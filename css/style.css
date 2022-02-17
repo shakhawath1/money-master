@@ -13,3 +13,6 @@ body{
 .calculate{
     background: #D3DEDC;
 }
+.error-message{
+    display: none;
+}
