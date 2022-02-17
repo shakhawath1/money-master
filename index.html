@@ -21,7 +21,7 @@
     <!-- main section  -->
     <main>
         <section class="container">
-            <div class="row d-flex justify-content-between">
+            <div class="row g-4 d-flex justify-content-between">
                 <!-- page banner -->
                 <div class="col-lg-7 col-sm-12">
                     <img class="img-fluid rounded-3" src="images/financial-planning.jpg" alt="">
@@ -40,11 +40,11 @@
                     <div class="px-5">
                         <h4 class="text-center my-3">Expences</h4>
                         <div>
-                            <p class="text-end">Food: <input type="number" class="ms-2">
+                            <p class="text-end">Food: <input id="food-exp" type="number" class="ms-2">
                             </p>
-                            <p class="text-end">Rent: <input type="number" class="ms-2">
+                            <p class="text-end">Rent: <input id="rent-exp" type="number" class="ms-2">
                             </p>
-                            <p class="text-end">Lifestyle: <input type="number" class="ms-2">
+                            <p class="text-end">Lifestyle: <input id="lifestyle-exp" type="number" class="ms-2">
                             </p>
                         </div>
                     </div>
@@ -54,8 +54,8 @@
                             <button id="calculate-btn" class="btn btn-info fs-5 fw-bold"
                                 type="button">Calculate</button>
                         </div>
-                        <p class="text-center fs-5 fw-bolder">Total Expences: <span></span></p>
-                        <p class="text-center fs-5 fw-bolder">Balance: <span></span></p>
+                        <p class="text-center fs-5 fw-bolder">Total Expences: <span id="total-exp"></span></p>
+                        <p class="text-center fs-5 fw-bolder">Balance: <span id="balance"></span></p>
                     </div>
                     <!-- saving part -->
                     <div>

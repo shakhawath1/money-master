@@ -1,3 +1,4 @@
+// get total expences 
 function getTotalExp() {
     const foodInputFild = document.getElementById('food-exp');
     const foodExp = parseFloat(foodInputFild.value);
@@ -8,12 +9,19 @@ function getTotalExp() {
     const totalExpences = foodExp + rentExp + lifestyleExp;
     return totalExpences;
 };
-function getBalance(amount) {
 
-};
-document.getElementById('calculate-btn').addEventListener('click', function () {
+function getBalance() {
+    const totalExp = getTotalExp();
     // get income
     const incomeFild = document.getElementById('income');
-    const incomeText = incomeFild.value;
-    const incomeAmount = parseFloat(incomeText);
+    const incomeAmount = parseFloat(incomeFild.value);
+    const balanceAmount = incomeAmount - totalExp;
+    return balanceAmount;
+};
+// set balance 
+document.getElementById('calculate-btn').addEventListener('click', function () {
+    const totalFild = document.getElementById('total-exp');
+    totalFild.innerText = getTotalExp();
+    const balanceFild = document.getElementById('balance');
+    balanceFild.innerText = getBalance();
 });
