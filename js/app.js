@@ -26,20 +26,19 @@ function getTotalExp() {
     const totalExpences = foodExp + rentExp + lifestyleExp;
     return totalExpences;
 };
+// calculate part
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const incomeAmount = getincomeAmount();
     const totalExp = getTotalExp();
     const expencesFild = document.getElementById('total-exp');
-
     const balanceFild = document.getElementById('balance');
-    // const balanceAmount = balanceFild.innerText;
-    if (incomeAmount > totalExp) {
+    if (incomeAmount < totalExp) {
+        alert('please reduce your expences.');
+    }
+    else {
         const balance = incomeAmount - totalExp;
         balanceFild.innerText = balance;
         expencesFild.innerText = totalExp;
-    }
-    else {
-        // alert('please reduce your expences.');
     }
 });
 // error handling for negative number
@@ -62,3 +61,4 @@ function setExpItem(itemId) {
         return parseFloat(expFild.value);
     }
 }
+// saving 
