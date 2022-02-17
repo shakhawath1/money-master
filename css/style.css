@@ -1,0 +1,15 @@
+/* common css */
+body{
+    margin: 0;
+    padding: 0;
+    background: azure;
+}
+/* heading style */
+.heading{
+    color: #D22779;
+}
+
+/* claculate style */
+.calculate{
+    background: #D3DEDC;
+}
