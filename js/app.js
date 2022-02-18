@@ -1,22 +1,21 @@
-// get income amount
-function getincomeAmount() {
-    const incomeFild = document.getElementById('income');
-    const incomeText = incomeFild.value;
-    const incomeAmount = parseFloat(incomeText);
-    const negativeFild = document.getElementById('income-negative');
-    const emptyFild = document.getElementById('income-empty');
-    if (incomeText < 0) {
+// get calculate item
+function getCalculateItem(itemId) {
+    const negativeFild = document.getElementById(itemId + '-negative');
+    const emptyFild = document.getElementById(itemId + '-empty');
+    const amountFild = document.getElementById(itemId + '-amount');
+    // error handling for negative number
+    if (amountFild.value < 0) {
         negativeFild.style.display = 'block';
         emptyFild.style.display = 'none';
     }
-    else if (incomeText == 0) {
+    else if (amountFild.value == 0) {
         negativeFild.style.display = 'none';
         emptyFild.style.display = 'block';
     }
     else {
         negativeFild.style.display = 'none';
         emptyFild.style.display = 'none';
-        return incomeAmount;
+        return parseFloat(amountFild.value);
     };
 };
 // get total expences 
@@ -29,7 +28,7 @@ function getTotalExp() {
 };
 // calculate part
 document.getElementById('calculate-btn').addEventListener('click', function () {
-    const incomeAmount = getincomeAmount();
+    const incomeAmount = getCalculateItem('income');
     const totalExp = getTotalExp();
     const expencesFild = document.getElementById('total-exp');
     const balanceFild = document.getElementById('balance');
@@ -42,51 +41,10 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
         expencesFild.innerText = totalExp;
     };
 });
-// get calculate item
-function getCalculateItem(itemId) {
-    const negativeFild = document.getElementById(itemId + '-negative');
-    const emptyFild = document.getElementById(itemId + '-empty');
-    const expFild = document.getElementById(itemId + '-exp');
-    // error handling for negative number
-    if (expFild.value < 0) {
-        negativeFild.style.display = 'block';
-        emptyFild.style.display = 'none';
-    }
-    else if (expFild.value == 0) {
-        negativeFild.style.display = 'none';
-        emptyFild.style.display = 'block';
-    }
-    else {
-        negativeFild.style.display = 'none';
-        emptyFild.style.display = 'none';
-        return parseFloat(expFild.value);
-    };
-};
-//  get saving percent
-function getSavingPercent() {
-    const percentFild = document.getElementById('percent-fild');
-    const percentText = percentFild.value;
-    const percent = parseFloat(percentText);
-    const negativeFild = document.getElementById('percent-negative');
-    const emptyFild = document.getElementById('percent-empty');
-    if (percentFild.value < 0) {
-        negativeFild.style.display = 'block';
-        emptyFild.style.display = 'none';
-    }
-    else if (percentFild.value == 0) {
-        negativeFild.style.display = 'none';
-        emptyFild.style.display = 'block';
-    }
-    else {
-        negativeFild.style.display = 'none';
-        emptyFild.style.display = 'none';
-        return percent;
-    };
-};
 // savings calculate
 document.getElementById('save-btn').addEventListener('click', function () {
-    const incomeAmount = getincomeAmount();
-    const savingPercent = getSavingPercent();
+    const incomeAmount = getCalculateItem('income');
+    const savingPercent = getCalculateItem('percent');
     const savingAmount = incomeAmount * (savingPercent / 100);
     const savingFild = document.getElementById('saving-amount');
     savingFild.innerText = savingAmount;
@@ -102,6 +60,5 @@ document.getElementById('save-btn').addEventListener('click', function () {
         const remainingAmount = balance - savingAmount;
         remainingFild.innerText = remainingAmount;
     }
-
 });
 
